@@ -27,7 +27,7 @@
   .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:12px} @media (max-width: 900px){.grid{grid-template-columns:1fr}}
   #wheelCanvas{width:min(90vw,560px);height:min(90vw,560px);background:conic-gradient(from 0deg,#1b1f3a,#252a52);
                border-radius:50%;border:10px solid #2b3054;box-shadow:inset 0 0 80px rgba(0,0,0,.3),0 20px 40px rgba(0,0,0,.35)}
-  .pointer{width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-bottom:22px solid var(--warn);filter:drop-shadow(0 3px 0 rgba(0,0,0,.4));margin-top:-6px}
+  .pointer{width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top: 22px solid var(--warn);filter: drop-shadow(0 -3px 0 rgba(0,0,0,.4));margin-bottom: -6px;}
   table{width:100%;border-collapse:collapse;font-size:13px} th,td{padding:8px 10px;border-bottom:1px dashed #2b3054;text-align:left}
   th{color:#cbd0ff} .phase{padding:.15em .5em;border-radius:999px;background:#2b3054}
   footer{padding:14px;text-align:center;color:#8085b0}
@@ -110,8 +110,8 @@
   <section class="grid">
     <div class="panel">
       <div style="display:grid;place-items:center;gap:8px">
-        <canvas id="wheelCanvas" width="560" height="560"></canvas>
         <div class="pointer"></div>
+        <canvas id="wheelCanvas" width="560" height="560"></canvas>
         <div class="stack">
           <button class="btn primary" id="btnSpin">🎯 開抽！</button>
           <button class="btn" id="btnShuffle">重新洗牌</button>
