@@ -298,6 +298,7 @@ document.getElementById('btnReset').onclick=()=>{
   document.getElementById('myPhase').value=""; document.getElementById('sortBy').value="distance"; document.getElementById('maxDist').value=1200;
   document.getElementById('maxDistLabel').textContent="≤ 1200 m"; document.getElementById('myLocLabel').textContent="起點：未設定（距離排序功能受限）"; renderPhaseChips(); apply();
 };
+document.getElementById('btnExport').onclick = exportCSV; 
 document.getElementById('onlyMeals').onchange=e=>{ state.onlyMeals=e.target.checked; apply(); };
 document.getElementById('onlyVeg').onchange=e=>{ state.onlyVeg=e.target.checked; apply(); };
 document.getElementById('cat').onchange=e=>{ state.cat=e.target.value; apply(); };
