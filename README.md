@@ -20,13 +20,6 @@
 2. 按下「🎯 開抽！」 → 轉盤自動旋轉  
 3. 結果顯示餐廳資訊，可一鍵開啟 Google 地圖或複製名稱＋地址  
 
-## 部署到 GitLab Pages
-1. 建立 repo，例如 `taiyuan-food-wheel`  
-2. 上傳 `index.html` 與 `.gitlab-ci.yml`  
-3. Push 到 main 分支 → 到 **Settings → Pages** 取得網址  
-   - 例如 `https://<gitlab-username>.gitlab.io/taiyuan-food-wheel/`  
-
 ## 注意事項
-- 若用 `file://` 直接開啟，瀏覽器可能擋 GPS 定位。  
 - 建議使用 GitLab Pages（HTTPS）或其他靜態網站服務（Netlify、Vercel 也可）。  
 - 餐廳位置採用 **各期中心點近似座標**，僅供午餐隨機參考。  
