@@ -205,11 +205,15 @@ function getFiltered(){
   const q=document.getElementById('q').value.trim();
   const words=q? q.split(/\s+/):[];
   let arr=DATA.filter(d=>state.phases.has(d.phase))
-              .filter(d=>!state.onlyMeals || (d.type!=="咖啡"&&d.type!=="飲料"&&d.type!=="甜點"&&d.type!=="果汁/輕食"&&d.type!=="早餐"))
+              .filter(d => !state.onlyMeals || (d.type!=="咖啡" && d.type!=="飲料" && d.type!=="甜點"))
               .filter(d=>!state.onlyVeg || d.veg)
               .filter(d=>!state.cat || d.cat===state.cat)
               .filter(d=>!state.price || d.price===state.price)
-              .filter(d=>!words.length || words.every(w=>(d.name+d.addr+d.type+d.cat).includes(w)))
+              .filter(d => {
+                if (!words.length) return true;
+                const hay = (d.name + d.addr + d.type + d.cat);
+                return words.some(w => hay.includes(w)); // OR 配對
+              })              
               .map(d=>({...d, coord:phaseCenters[d.phase]}));
   arr=arr.map(d=>({...d, dist: state.myLoc&&d.coord? haversine(state.myLoc,d.coord):null}));
   if(state.myLoc){ arr=arr.filter(d=>d.dist==null || d.dist<=state.maxDist); }
